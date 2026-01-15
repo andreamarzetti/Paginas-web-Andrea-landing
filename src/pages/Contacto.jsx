@@ -26,7 +26,7 @@ export default function Contacto() {
           </a>
 
           <a
-            href="mailto:vektra.tech@gmail.com"
+            href="mailto:andreamarzetti.9@gmail.com"
             className="contact-btn mail"
           >
             <FaEnvelope />
