@@ -1273,3 +1273,65 @@ nav a{
     font-size:2.1rem;
   }
 }
+@media (max-width: 768px) {
+
+  body{
+    background:
+      radial-gradient(circle at 20% 10%, rgba(10,124,194,.08), transparent 45%),
+      radial-gradient(circle at 80% 80%, rgba(57,181,106,.08), transparent 45%),
+      #f8fafc;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .hero-pro{
+    background:
+      linear-gradient(180deg, #1e5fd0 0%, #f8fafc 85%);
+    padding-top:120px;
+  }
+
+  .hero-pro p{
+    color:#334155;
+  }
+
+}
+@media (max-width: 768px) {
+
+  p{
+    color:#475569;
+    line-height:1.7;
+  }
+
+  .subtitle,
+  .service-note,
+  .contact-text{
+    color:#475569;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .card,
+  .service-card,
+  .portfolio-card-pro,
+  .proceso-card{
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+  }
+
+  .card:hover{
+    transform:none;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .btn-primary,
+  .btn-outline,
+  .contact-btn,
+  .cta-btn{
+    width:100%;
+    justify-content:center;
+  }
+
+}
