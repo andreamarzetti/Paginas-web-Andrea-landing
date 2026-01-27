@@ -55,6 +55,19 @@ export default function Portfolio() {
         </a>
 
         {/* LANDING DEMO */}
+
+       <a
+          href="https://logisticapro.netlify.app/"
+          target="_blank"
+          rel="noreferrer"
+          className="portfolio-card-pro"
+        />
+          <div
+            className="portfolio-image"
+            style={{ backgroundImage: "url('../assets/img3.jpg.png')" }}
+          />
+
+
         <div className="portfolio-card-pro disabled">
           <div className="portfolio-image placeholder" />
 
@@ -62,7 +75,7 @@ export default function Portfolio() {
             <span className="portfolio-tag">Landing Page</span>
             <h3>Landing Comercial</h3>
             <p>Ejemplo de landing enfocada en conversión.</p>
-            <strong className="portfolio-status soon">Próximamente</strong>
+            <strong className="portfolio-status soon">Online</strong>
           </div>
         </div>
 
