@@ -38,19 +38,19 @@ export default function Servicios() {
             Ver ejemplos →
           </a>
         </div>
-    {/* SISTEMAS */}<div className="card service-card service-disabled">
-  <div className="service-icon">📊</div>
-  <h3>Soluciones de Gestión</h3>
-  <p>
-   Herramientas personalizadas para controlar ventas,
-            stock, gastos y organizar mejor tu negocio.
-    <br />
-    <strong className="coming-soon">Próximamente disponible.</strong>
-  </p>
-  <span className="service-note">
-    Podés consultarlo sin compromiso
-  </span>
-</div>
+      {/* ECOMMERCE */}
+        <div className="card service-card">
+          <div className="service-icon">🛒</div>
+          <h3>Tiendas Online (Ecommerce)</h3>
+          <p>
+            Creamos tu tienda online lista para vender 24/7.
+            Con catálogo de productos, carrito de compras,
+            medios de pago y gestión simple.
+          </p>
+          <a href="#portfolio" className="service-link">
+            Ver ejemplos →
+          </a>
+        </div>
       </div>
 
     </div>

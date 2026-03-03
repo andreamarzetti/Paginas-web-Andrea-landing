@@ -96,6 +96,7 @@ nav a{
 .hero h1 span{
   background:linear-gradient(90deg,#7cf3b1,#93c5fd);
   -webkit-background-clip:text;
+  background-clip: border-box;
   -webkit-text-fill-color:transparent;
 }
 
@@ -1334,4 +1335,24 @@ nav a{
     justify-content:center;
   }
 
+}
+.portfolio-image{
+  height:220px;
+  background-size:cover;
+  background-position:center; /* 👈 antes estaba top */
+  background-repeat:no-repeat;
+}
+
+.portfolio-image{
+  height:200px;
+}
+
+.portfolio-image{
+  height:190px;
+}
+
+.portfolio-card-pro{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
 }

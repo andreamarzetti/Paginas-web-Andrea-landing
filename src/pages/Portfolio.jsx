@@ -73,6 +73,25 @@ export default function Portfolio() {
         </a>
 
       </div>
+ {/* ECOMMERCE */}
+        <a
+          href="https://vbternurastejidas.com/"
+          target="_blank"
+          rel="noreferrer"
+          className="portfolio-card-pro"
+        >
+          <div
+            className="portfolio-image"
+            style={{ backgroundImage: "url('/assets/img4.jpg.png')" }}
+          />
+
+          <div className="portfolio-info">
+            <span className="portfolio-tag">Ecommerce</span>
+            <h3>Tienda Online Moderna</h3>
+            <p>Tienda online optimizada para ventas con carrito, checkout y gestión de productos.</p>
+            <strong className="portfolio-status online">Online</strong>
+          </div>
+        </a>
 
       {/* CTA */}
       <div className="portfolio-cta">
