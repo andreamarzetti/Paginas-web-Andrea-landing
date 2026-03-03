@@ -87,7 +87,7 @@ export default function Portfolio() {
 
           <div className="portfolio-info">
             <span className="portfolio-tag">Ecommerce</span>
-            <h3>Tienda Online Moderna</h3>
+            <h3>Ecommerce de Amigurumis</h3>
             <p>Tienda online optimizada para ventas con carrito, checkout y gestión de productos.</p>
             <strong className="portfolio-status online">Online</strong>
           </div>
