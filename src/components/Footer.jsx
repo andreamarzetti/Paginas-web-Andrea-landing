@@ -1,35 +1,36 @@
-import { Wordmark } from "./Brand";
-import { CONTACT, NAV_LINKS, whatsappLink } from "../data/site";
+import { Brand } from "./Brand";
+import { CONTACT, whatsappLink } from "../data/site";
 
 export default function Footer() {
   return (
-    <footer className="footer">
-      <div className="container footer-grid">
-        <div className="footer-brand">
-          <Wordmark />
-          <p>Desarrollo de sitios web y landing pages modernas.</p>
+    <footer>
+      <div className="container">
+        <div className="footer-grid">
+          <div>
+            <Brand className="footer-brand" />
+            <p>Soluciones de domótica pensadas para hacer tu día a día más simple. Asesoramiento, configuración y acompañamiento.</p>
+          </div>
+          <div>
+            <h4>Explorá</h4>
+            <div className="footer-links">
+              <a href="#kits">Nuestros kits</a>
+              <a href="#experiencia">Cómo funciona</a>
+              <a href="#cotizador">Encontrá tu kit</a>
+              <a href="#preguntas">Preguntas frecuentes</a>
+            </div>
+          </div>
+          <div>
+            <h4>Contacto</h4>
+            <div className="footer-links">
+              <a href={whatsappLink("Hola, quiero hacer una consulta.")} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              <a href={CONTACT.instagramUrl} target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a href={`mailto:${CONTACT.email}`}>Email</a>
+              <a href="#inicio">Volver arriba ↑</a>
+              <span>{CONTACT.zone}</span>
+            </div>
+          </div>
         </div>
-        <div>
-          <h4 className="mono">Explorá</h4>
-          <ul>
-            {NAV_LINKS.map((l) => (
-              <li key={l.href}><a href={l.href}>{l.label}</a></li>
-            ))}
-            <li><a href="#asistente">Asistente</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="mono">Contacto</h4>
-          <ul>
-            <li><a href={whatsappLink()} target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-            <li><a href={`mailto:${CONTACT.email}`}>Email</a></li>
-            <li><a href={CONTACT.instagramUrl} target="_blank" rel="noopener noreferrer">Instagram</a></li>
-          </ul>
-        </div>
-      </div>
-      <div className="container footer-bottom">
-        <span>© {new Date().getFullYear()} Vektra Tech · Todos los derechos reservados</span>
-        <a href="#inicio">Volver arriba ↑</a>
+        <div className="copyright">© {new Date().getFullYear()} Vektra Tech. Todos los derechos reservados.</div>
       </div>
     </footer>
   );

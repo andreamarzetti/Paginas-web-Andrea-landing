@@ -1,31 +1,27 @@
-import { LuLightbulb, LuPenTool, LuCode, LuRocket } from "react-icons/lu";
-import { PROCESS } from "../data/site";
-
-const ICONS = [LuLightbulb, LuPenTool, LuCode, LuRocket];
+const STEPS = [
+  { n: "01", title: "Nos contás qué necesitás", text: "Hablamos sobre tu espacio, qué querés automatizar y qué presupuesto tenés en mente." },
+  { n: "02", title: "Preparamos tu solución", text: "Te recomendamos el kit adecuado y coordinamos entrega, configuración e instalación si corresponde." },
+  { n: "03", title: "Empezás a disfrutarla", text: "Te acompañamos con indicaciones claras para que puedas usar tus dispositivos con confianza." },
+];
 
 export default function Proceso() {
   return (
-    <section className="section process" id="proceso">
+    <section className="section process">
       <div className="container">
-        <header className="section-head" data-reveal>
-          <span className="eyebrow">Cómo trabajamos</span>
-          <h2>Un proceso claro, simple y enfocado en resultados.</h2>
-        </header>
-
-        <ol className="timeline" data-reveal>
-          <span className="timeline-track" aria-hidden="true"><span className="timeline-fill" /></span>
-          {PROCESS.map((step, i) => {
-            const Icon = ICONS[i];
-            return (
-              <li key={step.n} className="step" style={{ "--i": i }}>
-                <span className="step-node"><Icon aria-hidden="true" /></span>
-                <span className="mono step-n">Paso {step.n}</span>
-                <h3>{step.title}</h3>
-                <p>{step.text}</p>
-              </li>
-            );
-          })}
-        </ol>
+        <div className="section-head">
+          <span className="eyebrow">Simple desde el primer mensaje</span>
+          <h2>De la idea a tu casa conectada.</h2>
+          <p>Un proceso claro, con acompañamiento en cada paso.</p>
+        </div>
+        <div className="process-grid">
+          {STEPS.map((s) => (
+            <article className="process-card" key={s.n}>
+              <div className="process-number">{s.n}</div>
+              <h3>{s.title}</h3>
+              <p>{s.text}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
