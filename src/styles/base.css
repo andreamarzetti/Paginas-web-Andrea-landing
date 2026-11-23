@@ -1,0 +1,165 @@
+/* ================= BASE ================= */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 16px/1.65 var(--f-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+body.menu-open { overflow: hidden; }
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+h1, h2, h3, h4, h5, p { margin: 0; }
+h1, h2, h3, h4, h5 { font-family: var(--f-display); font-weight: 700; letter-spacing: -0.03em; line-height: 1.08; }
+h2 { font-size: clamp(2.05rem, 4.2vw, 3.3rem); }
+h3 { font-size: 1.3rem; letter-spacing: -0.02em; }
+::selection { background: rgba(74, 222, 128, 0.35); color: #fff; }
+:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 6px; }
+
+.container { width: min(var(--max), calc(100% - var(--gutter))); margin-inline: auto; }
+.mono { font-family: var(--f-mono); }
+.text-gradient {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.skip-link {
+  position: fixed; left: 16px; top: -60px; z-index: 100;
+  padding: 10px 16px; border-radius: 10px; background: var(--green); color: var(--ink); font-weight: 600;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 16px; }
+
+/* ---------- Secciones ---------- */
+.section { position: relative; padding: clamp(84px, 11vw, 136px) 0; }
+.section-head { max-width: 680px; margin-bottom: clamp(36px, 5vw, 56px); }
+.section-head h2 { margin: 18px 0 16px; }
+.section-head p { color: var(--muted); font-size: 1.08rem; max-width: 58ch; }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 12px;
+  font: 500 0.74rem/1 var(--f-mono);
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--green-2);
+}
+.eyebrow::before {
+  content: ""; width: 26px; height: 2px; border-radius: 2px; background: var(--grad);
+}
+
+/* ---------- Botones ---------- */
+.btn {
+  --btn-bg: transparent;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 13px 22px; border-radius: 999px; border: 1px solid transparent;
+  background: var(--btn-bg); font-weight: 600; font-size: 0.95rem; line-height: 1.2;
+  white-space: nowrap;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), background 0.25s, border-color 0.25s, color 0.25s;
+}
+.btn svg { flex: none; transition: transform 0.25s var(--ease); }
+.btn:hover { transform: translateY(-2px); }
+.btn:hover svg { transform: translateX(3px); }
+.btn:active { transform: translateY(0); }
+.btn:disabled { opacity: 0.35; cursor: not-allowed; transform: none; }
+.btn-sm { padding: 10px 16px; font-size: 0.88rem; }
+.btn-lg { padding: 16px 26px; font-size: 1rem; }
+.btn-block { width: 100%; }
+.btn-primary {
+  --btn-bg: var(--green); color: #04150b;
+  box-shadow: 0 10px 30px -10px rgba(74, 222, 128, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+.btn-primary:hover { --btn-bg: #6ee7a0; box-shadow: 0 16px 40px -12px rgba(74, 222, 128, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.35); }
+.btn-ghost { border-color: var(--line-2); color: var(--text); background: rgba(255, 255, 255, 0.03); }
+.btn-ghost:hover { border-color: rgba(255, 255, 255, 0.4); background: rgba(255, 255, 255, 0.06); }
+.btn-wa { --btn-bg: var(--wa); color: #03200f; box-shadow: 0 12px 30px -12px rgba(37, 211, 102, 0.6); }
+.btn-wa:hover { --btn-bg: #3ee07c; }
+
+.link-arrow { display: inline-flex; align-items: center; gap: 8px; color: var(--green-2); font-weight: 600; font-size: 0.93rem; }
+.link-arrow svg { transition: transform 0.25s var(--ease); }
+.link-arrow:hover svg { transform: translateX(4px); }
+
+/* ---------- Íconos ---------- */
+.icon-tile {
+  width: 46px; height: 46px; flex: none; display: grid; place-items: center;
+  border-radius: 14px; color: var(--cyan); font-size: 1.25rem;
+  background: linear-gradient(145deg, rgba(47, 107, 255, 0.16), rgba(34, 211, 238, 0.06));
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  transition: color 0.3s, background 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.icon-tile-sm { width: 38px; height: 38px; border-radius: 11px; font-size: 1.05rem; }
+.icon-tile-lg { width: 60px; height: 60px; border-radius: 18px; font-size: 1.6rem; }
+
+.dot-live {
+  display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--green);
+  box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6); animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.55); }
+  70% { box-shadow: 0 0 0 9px rgba(74, 222, 128, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+}
+
+/* ---------- Tarjeta con luz que sigue al puntero ---------- */
+.glow-card {
+  position: relative; isolation: isolate;
+  background: linear-gradient(180deg, var(--surface), #0c1528);
+  border: 1px solid var(--line);
+  transition: transform 0.4s var(--ease), border-color 0.3s, box-shadow 0.4s var(--ease);
+}
+.glow-card::before, .glow-card::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  opacity: 0; transition: opacity 0.35s;
+}
+.glow-card::before {
+  z-index: -1;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 0%), rgba(34, 211, 238, 0.10), transparent 60%);
+}
+.glow-card::after {
+  inset: -1px; padding: 1px;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 0%), rgba(74, 222, 128, 0.75), rgba(47, 107, 255, 0.35) 45%, transparent 70%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+}
+.glow-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.glow-card:hover::before, .glow-card:hover::after { opacity: 1; }
+
+/* ---------- Animaciones al hacer scroll ---------- */
+/* Se usa animation (fill backwards) para no interferir con las transiciones de hover */
+[data-reveal] { opacity: 0; }
+[data-reveal].is-visible { opacity: 1; animation: reveal 0.85s var(--ease) var(--rd, 0ms) backwards; }
+@keyframes reveal { from { opacity: 0; transform: translateY(26px); } }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pop { from { opacity: 0; transform: scale(0.6); } to { opacity: 1; transform: none; } }
+
+/* ---------- WhatsApp flotante ---------- */
+.whatsapp-float {
+  position: fixed; right: 22px; bottom: 22px; z-index: 40;
+  width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--wa); color: #fff; font-size: 1.75rem;
+  box-shadow: 0 14px 34px -8px rgba(37, 211, 102, 0.55);
+  transition: transform 0.25s var(--ease);
+}
+.whatsapp-float::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit;
+  border: 2px solid var(--wa); animation: ring 2.6s var(--ease) infinite;
+}
+@keyframes ring { 0% { transform: scale(1); opacity: 0.7; } 100% { transform: scale(1.6); opacity: 0; } }
+.whatsapp-float:hover { transform: translateY(-4px) scale(1.04); }
+@media (max-width: 680px) {
+  .whatsapp-float { right: 16px; bottom: 16px; width: 54px; height: 54px; font-size: 1.6rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  [data-reveal] { opacity: 1; }
+}

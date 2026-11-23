@@ -1,53 +1,75 @@
-import { FaWhatsapp, FaEnvelope, FaInstagram } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { LuMail, LuArrowUpRight, LuClock } from "react-icons/lu";
+import { CONTACT, whatsappLink } from "../data/site";
+import { spotlight } from "../hooks/useReveal";
 
 export default function Contacto() {
   return (
-    <section className="contact-pro" id="contacto">
-      <div className="contact-card">
-
-        <span className="section-badge">Contacto</span>
-
-        <h2>Hablemos de tu proyecto</h2>
-
-        <p className="contact-text">
-          Contanos tu idea y te asesoramos sin compromiso.
-          Respondemos rápido y con propuestas claras.
-        </p>
-
-        <div className="contact-actions">
-          <a
-            href="https://wa.me/5491122631648"
-            target="_blank"
-            rel="noreferrer"
-            className="contact-btn wpp"
-          >
-            <FaWhatsapp />
-            WhatsApp
-          </a>
-
-          <a
-            href="mailto:andreamarzetti.9@gmail.com"
-            className="contact-btn mail"
-          >
-            <FaEnvelope />
-            Email
-          </a>
-
-          <a
-            href="https://www.instagram.com/vektra_tech/"
-            target="_blank"
-            rel="noreferrer"
-            className="contact-btn ig"
-          >
-            <FaInstagram />
-            Instagram
-          </a>
+    <section className="section contact" id="contacto">
+      <div className="contact-glow" aria-hidden="true" />
+      <div className="container contact-grid">
+        <div className="contact-copy" data-reveal>
+          <span className="eyebrow">Contacto</span>
+          <h2>Hablemos de tu proyecto.</h2>
+          <p>
+            Contanos tu idea y te asesoramos sin compromiso. Respondemos rápido y
+            con propuestas claras.
+          </p>
+          <p className="contact-time">
+            <span className="dot-live" aria-hidden="true" />
+            <LuClock aria-hidden="true" /> {CONTACT.responseTime}
+          </p>
         </div>
 
-        <p className="contact-foot">
-          ⏱ Respondemos dentro de las 24 hs hábiles
-        </p>
+        <div className="channels">
+          <a
+            href={whatsappLink("Hola Vektra Tech! Quiero consultar por una página web.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="channel channel-wa glow-card"
+            onPointerMove={spotlight}
+            data-reveal
+          >
+            <span className="channel-icon"><FaWhatsapp aria-hidden="true" /></span>
+            <span className="channel-text">
+              <small>La vía más rápida</small>
+              <strong>Escribinos por WhatsApp</strong>
+            </span>
+            <LuArrowUpRight className="channel-arrow" aria-hidden="true" />
+          </a>
 
+          <a
+            href={`mailto:${CONTACT.email}`}
+            className="channel glow-card"
+            onPointerMove={spotlight}
+            data-reveal
+            style={{ "--rd": "90ms" }}
+          >
+            <span className="channel-icon"><LuMail aria-hidden="true" /></span>
+            <span className="channel-text">
+              <small>Email</small>
+              <strong>{CONTACT.email}</strong>
+            </span>
+            <LuArrowUpRight className="channel-arrow" aria-hidden="true" />
+          </a>
+
+          <a
+            href={CONTACT.instagramUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="channel glow-card"
+            onPointerMove={spotlight}
+            data-reveal
+            style={{ "--rd": "180ms" }}
+          >
+            <span className="channel-icon channel-ig"><FaInstagram aria-hidden="true" /></span>
+            <span className="channel-text">
+              <small>Instagram</small>
+              <strong>{CONTACT.instagramHandle}</strong>
+            </span>
+            <LuArrowUpRight className="channel-arrow" aria-hidden="true" />
+          </a>
+        </div>
       </div>
     </section>
   );

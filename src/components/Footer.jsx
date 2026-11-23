@@ -1,16 +1,36 @@
+import { Wordmark } from "./Brand";
+import { CONTACT, NAV_LINKS, whatsappLink } from "../data/site";
+
 export default function Footer() {
   return (
-    <footer style={{
-      padding:"50px 20px",
-      textAlign:"center",
-      color:"#64748b",
-      borderTop:"1px solid rgba(0,0,0,.1)"
-    }}>
-      <h3 style={{color:"#0a7cc2"}}>Vektra Tech</h3>
-      <p>Desarrollo de sitios web y landing pages modernas</p>
-      <p style={{marginTop:"10px", fontSize:".9rem"}}>
-        © 2026 · Todos los derechos reservados
-      </p>
+    <footer className="footer">
+      <div className="container footer-grid">
+        <div className="footer-brand">
+          <Wordmark />
+          <p>Desarrollo de sitios web y landing pages modernas.</p>
+        </div>
+        <div>
+          <h4 className="mono">Explorá</h4>
+          <ul>
+            {NAV_LINKS.map((l) => (
+              <li key={l.href}><a href={l.href}>{l.label}</a></li>
+            ))}
+            <li><a href="#asistente">Asistente</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="mono">Contacto</h4>
+          <ul>
+            <li><a href={whatsappLink()} target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            <li><a href={`mailto:${CONTACT.email}`}>Email</a></li>
+            <li><a href={CONTACT.instagramUrl} target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div className="container footer-bottom">
+        <span>© {new Date().getFullYear()} Vektra Tech · Todos los derechos reservados</span>
+        <a href="#inicio">Volver arriba ↑</a>
+      </div>
     </footer>
   );
 }
