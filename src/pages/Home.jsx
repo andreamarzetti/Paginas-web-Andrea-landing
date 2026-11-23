@@ -1,27 +1,35 @@
+import { LuArrowUpRight } from "react-icons/lu";
 import Hero from "./Hero";
-import Servicios from "./Servicios";
-import DemoInteractiva from "./DemoInteractiva";
+import Kits from "./Kits";
+import Experiencia from "./Experiencia";
+import Playground from "./Playground";
 import Proceso from "./Proceso";
-import Portfolio from "./Portfolio";
-import Asistente from "./Asistente";
-import Nosotros from "./Nosotros";
-import CTA from "./Cta";
-import Contacto from "./Contacto";
-import useReveal from "../hooks/useReveal";
+import Cotizador from "./Cotizador";
+import Preguntas from "./Preguntas";
+import { whatsappLink } from "../data/site";
 
 export default function Home() {
-  useReveal();
   return (
-    <main id="main">
+    <main>
       <Hero />
-      <Servicios />
-      <DemoInteractiva />
+      <Kits />
+      <Experiencia />
+      <Playground />
       <Proceso />
-      <Portfolio />
-      <Asistente />
-      <Nosotros />
-      <CTA />
-      <Contacto />
+      <Cotizador />
+      <Preguntas />
+
+      <section className="final-cta">
+        <div className="container final-cta-inner">
+          <div>
+            <h2>Tu casa puede hacer más por vos.</h2>
+            <p>Contanos qué te gustaría automatizar. Nosotros te ayudamos a dar el primer paso.</p>
+          </div>
+          <a className="btn" href={whatsappLink("Hola, quiero empezar a automatizar mi casa.")} target="_blank" rel="noopener noreferrer">
+            Quiero mi casa inteligente <LuArrowUpRight className="arrow" aria-hidden="true" />
+          </a>
+        </div>
+      </section>
     </main>
   );
 }

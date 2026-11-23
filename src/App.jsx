@@ -7,22 +7,20 @@ import { whatsappLink } from "./data/site";
 export default function App() {
   return (
     <>
-      <a href="#main" className="skip-link">Saltar al contenido</a>
       <NavBar />
       <Home />
+      <Footer />
 
       {/* WhatsApp flotante */}
       <a
-        href={whatsappLink()}
         className="whatsapp-float"
+        href={whatsappLink("Hola, quiero consultar por domótica.")}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Escribinos por WhatsApp"
+        aria-label="Contactar por WhatsApp"
       >
         <FaWhatsapp aria-hidden="true" />
       </a>
-
-      <Footer />
     </>
   );
 }
