@@ -1,0 +1,45 @@
+/* ================= IDENTIDAD VEKTRA · TOKENS ================= */
+:root {
+  /* Fondos */
+  --bg: #060a13;
+  --bg-2: #0a1224;
+  --surface: #0f1a30;
+  --surface-2: #13223d;
+  --line: rgba(148, 178, 230, 0.12);
+  --line-2: rgba(148, 178, 230, 0.22);
+
+  /* Texto */
+  --text: #e8eef8;
+  --muted: #8a9bb8;
+
+  /* Gradiente del logo: azul -> cian -> verde */
+  --blue: #2f6bff;
+  --cyan: #22d3ee;
+  --green: #4ade80;
+  --green-2: #86efac;
+  --grad: linear-gradient(100deg, var(--blue) 0%, var(--cyan) 52%, var(--green) 100%);
+  --wa: #25d366;
+
+  /* Sección clara */
+  --paper: #f2f5f9;
+  --ink: #0a1224;
+  --ink-muted: #52617a;
+
+  /* Tipografía */
+  --f-display: "Space Grotesk", system-ui, sans-serif;
+  --f-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
+
+  /* Forma */
+  --r-sm: 12px;
+  --r: 20px;
+  --r-lg: 28px;
+  --max: 1200px;
+  --gutter: 40px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 680px) {
+  :root { --gutter: 32px; }
+}

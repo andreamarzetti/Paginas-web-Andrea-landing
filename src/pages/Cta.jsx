@@ -1,14 +1,25 @@
+import { LuArrowRight, LuSparkles } from "react-icons/lu";
+
 export default function CTA() {
   return (
-    <div className="cta-box">
-      <h2>¿Listo para tener tu web profesional?</h2>
-      <p>
-        Contanos tu idea y te asesoramos sin compromiso.
-      </p>
-
-      <a href="#contacto" className="btn-primary btn-large">
-        Contactanos ahora
-      </a>
-    </div>
+    <section className="cta" aria-labelledby="cta-title">
+      <div className="container">
+        <div className="cta-box" data-reveal>
+          <div className="cta-beam" aria-hidden="true" />
+          <div className="cta-copy">
+            <h2 id="cta-title">¿Listo para tener tu web profesional?</h2>
+            <p>Contanos tu idea y te asesoramos sin compromiso.</p>
+          </div>
+          <div className="cta-actions">
+            <a href="#contacto" className="btn btn-primary btn-lg">
+              Contactanos ahora <LuArrowRight aria-hidden="true" />
+            </a>
+            <a href="#asistente" className="btn btn-ghost btn-lg">
+              <LuSparkles aria-hidden="true" /> Usar el asistente
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

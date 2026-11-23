@@ -1,0 +1,75 @@
+/* ================= CTA ================= */
+.cta { padding: 0 0 clamp(72px, 9vw, 112px); background: var(--bg); }
+.cta-box {
+  position: relative; overflow: hidden; isolation: isolate;
+  display: flex; align-items: center; justify-content: space-between; gap: 32px;
+  padding: clamp(36px, 5vw, 60px) clamp(24px, 5vw, 64px);
+  border-radius: 32px; border: 1px solid var(--line-2);
+  background: linear-gradient(115deg, #0d2563 0%, #0a1834 48%, #082a26 100%);
+}
+.cta-beam {
+  position: absolute; inset: 0; z-index: -1;
+  background:
+    radial-gradient(500px 260px at 12% 0%, rgba(47, 107, 255, 0.45), transparent 70%),
+    radial-gradient(420px 260px at 92% 100%, rgba(74, 222, 128, 0.30), transparent 70%),
+    repeating-linear-gradient(118deg, transparent 0 34px, rgba(255, 255, 255, 0.035) 34px 35px);
+}
+.cta-copy h2 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); margin-bottom: 10px; }
+.cta-copy p { color: #b9c7dc; font-size: 1.08rem; }
+.cta-actions { display: flex; flex-wrap: wrap; gap: 12px; flex: none; }
+.cta .btn-ghost { background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.25); }
+
+@media (max-width: 900px) {
+  .cta-box { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 560px) {
+  .cta-box { border-radius: 24px; }
+  .cta-actions { width: 100%; }
+  .cta-actions .btn { width: 100%; }
+}
+
+/* ================= CONTACTO ================= */
+.contact {
+  overflow: hidden;
+  background: var(--bg-2);
+  border-top: 1px solid var(--line);
+}
+.contact-glow {
+  position: absolute; left: 50%; bottom: -320px; translate: -50% 0; width: 1000px; height: 600px; pointer-events: none;
+  background: radial-gradient(ellipse, rgba(47, 107, 255, 0.22), rgba(34, 211, 238, 0.08) 40%, transparent 70%);
+}
+.contact-grid { position: relative; display: grid; grid-template-columns: 0.95fr 1.05fr; gap: clamp(36px, 6vw, 80px); align-items: center; }
+.contact-copy h2 { font-size: clamp(2.4rem, 5.2vw, 4.2rem); margin: 20px 0 20px; }
+.contact-copy > p { color: var(--muted); font-size: 1.1rem; max-width: 44ch; }
+.contact-time {
+  display: inline-flex; align-items: center; gap: 10px; margin-top: 28px; padding: 10px 16px; border-radius: 99px;
+  border: 1px solid var(--line-2); background: rgba(255, 255, 255, 0.03); color: var(--text); font-size: 0.9rem;
+}
+.contact-time svg { color: var(--muted); }
+
+.channels { display: grid; gap: 14px; }
+.channel { display: flex; align-items: center; gap: 18px; padding: 22px 24px; border-radius: 22px; }
+.channel-icon {
+  width: 54px; height: 54px; flex: none; display: grid; place-items: center; border-radius: 16px; font-size: 1.45rem;
+  background: rgba(255, 255, 255, 0.05); border: 1px solid var(--line-2); color: var(--text);
+}
+.channel-text { min-width: 0; }
+.channel-text small { display: block; font: 500 0.7rem var(--f-mono); color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+.channel-text strong { display: block; margin-top: 3px; font-size: 1.12rem; overflow-wrap: anywhere; }
+.channel-arrow { margin-left: auto; flex: none; font-size: 1.3rem; color: var(--muted); transition: transform 0.3s var(--ease), color 0.3s; }
+.channel:hover .channel-arrow { transform: translate(3px, -3px); color: var(--green); }
+.channel-wa { padding: 28px 26px; background: linear-gradient(135deg, rgba(37, 211, 102, 0.17), rgba(37, 211, 102, 0.03) 60%), var(--surface); border-color: rgba(37, 211, 102, 0.35); }
+.channel-wa .channel-icon { background: var(--wa); border-color: transparent; color: #fff; font-size: 1.7rem; box-shadow: 0 12px 30px -10px rgba(37, 211, 102, 0.7); }
+.channel-wa strong { font-size: 1.3rem; }
+.channel-ig { background: linear-gradient(135deg, #f58529, #dd2a7b 55%, #8134af); border-color: transparent; color: #fff; }
+
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .channel { padding: 18px; gap: 14px; }
+  .channel-wa { padding: 22px 18px; }
+  .channel-icon { width: 48px; height: 48px; }
+  .channel-text strong { font-size: 1rem; }
+  .channel-wa strong { font-size: 1.12rem; }
+}

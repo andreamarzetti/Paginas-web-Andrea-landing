@@ -1,48 +1,32 @@
+import { LuLightbulb, LuPenTool, LuCode, LuRocket } from "react-icons/lu";
+import { PROCESS } from "../data/site";
+
+const ICONS = [LuLightbulb, LuPenTool, LuCode, LuRocket];
+
 export default function Proceso() {
   return (
-    <>
-      <h2>Cómo trabajamos</h2>
-      <p className="subtitle">
-        Un proceso claro, simple y enfocado en resultados
-      </p>
+    <section className="section process" id="proceso">
+      <div className="container">
+        <header className="section-head" data-reveal>
+          <span className="eyebrow">Cómo trabajamos</span>
+          <h2>Un proceso claro, simple y enfocado en resultados.</h2>
+        </header>
 
-      <div className="process-grid">
-        <div className="process-card">
-          <span>01</span>
-          <h3>Idea & Objetivos</h3>
-          <p>
-            Analizamos tu negocio, tu público y qué necesitás lograr con tu
-            web.
-          </p>
-        </div>
-
-        <div className="process-card">
-          <span>02</span>
-          <h3>Diseño</h3>
-          <p>
-            Creamos un diseño moderno alineado a tu marca y pensado para
-            convertir.
-          </p>
-        </div>
-
-        <div className="process-card">
-          <span>03</span>
-          <h3>Desarrollo</h3>
-          <p>
-            Programamos tu sitio optimizado, rápido y adaptable a todos los
-            dispositivos.
-          </p>
-        </div>
-
-        <div className="process-card">
-          <span>04</span>
-          <h3>Entrega & Soporte</h3>
-          <p>
-            Publicamos tu web y te acompañamos para que empiece a generar
-            resultados.
-          </p>
-        </div>
+        <ol className="timeline" data-reveal>
+          <span className="timeline-track" aria-hidden="true"><span className="timeline-fill" /></span>
+          {PROCESS.map((step, i) => {
+            const Icon = ICONS[i];
+            return (
+              <li key={step.n} className="step" style={{ "--i": i }}>
+                <span className="step-node"><Icon aria-hidden="true" /></span>
+                <span className="mono step-n">Paso {step.n}</span>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </li>
+            );
+          })}
+        </ol>
       </div>
-    </>
+    </section>
   );
 }
